@@ -8,15 +8,27 @@ import { kynthNodeDescription } from './description';
 
 export class KynthCore implements INodeType {
 	// n8n's manual review (2026-08-17, v0.2.3) required this even though
-	// kynthNodeDescription already carries an icon field. The linter rule
-	// `@n8n/community-nodes/icon-validation` reads the CLASS, not the description it
-	// points at. The svg it names did not exist in the package at all until now, so the
-	// node also shipped iconless. Both halves are fixed together.
-	//
-	// n8n's manual review (2026-09-21, on v0.3.0) escalated this: a single-file icon on
-	// the node class no longer satisfies icon-validation at all, it must be the themed
-	// { light, dark } form. Same SVG for both until separate variants exist.
+	// kynthNodeDescription already carries an icon field. Kept because the credential
+	// class check (a real ICredentialType field) needs its own top-level icon regardless.
 	icon: Icon = { light: 'file:kynth.svg', dark: 'file:kynth.svg' };
 
-	description: INodeTypeDescription = kynthNodeDescription;
+	// THE REAL FAILURE, found by reading @n8n/eslint-plugin-community-nodes' own source
+	// (node_modules/@n8n/eslint-plugin-community-nodes/src/rules/icon-validation.ts and
+	// require-node-description-fields.ts) rather than guessing from the review email a
+	// second time. Both rules only look at properties written DIRECTLY on this object
+	// literal (`descriptionValue.properties`) and never resolve what a spread's source
+	// object holds, so `description = kynthNodeDescription` (a bare identifier) reported
+	// icon as missing outright, and a plain `{ ...kynthNodeDescription }` would have hidden
+	// icon and subtitle from these two rules even though both are real fields on the
+	// spread source. Repeating them as explicit properties satisfies the AST check while
+	// staying byte-identical to kynthNodeDescription at runtime, since the values match.
+	description: INodeTypeDescription = {
+		...kynthNodeDescription,
+		icon: { light: 'file:kynth.svg', dark: 'file:kynth.svg' },
+		subtitle: '={{ $parameter["operation"] }}',
+		// A regular declarative node (not a trigger, has both inputs and outputs), so
+		// n8n's own AI-agent tool picker can call it directly. @n8n/community-nodes/
+		// node-usable-as-tool requires this be stated one way or the other.
+		usableAsTool: true,
+	};
 }
