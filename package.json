@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-compound",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "ParseRail for n8n: 41 finished-job AI operations in one node, documents to schema-valid JSON, extraction, triage, research, moderation, agent memory. One credit wallet, failed calls never burn credits.",
   "keywords": [
     "n8n-community-node-package",

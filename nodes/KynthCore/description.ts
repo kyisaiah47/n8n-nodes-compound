@@ -9,7 +9,7 @@ export const kynthNodeDescription = {
 	...({
 	"displayName": "Kynth Core",
 	"name": "kynthCore",
-	"icon": "file:kynth.svg",
+	"icon": { "light": "file:kynth.svg", "dark": "file:kynth.svg" },
 	"group": [
 		"transform"
 	],

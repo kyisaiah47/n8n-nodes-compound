@@ -8,11 +8,15 @@ import { kynthNodeDescription } from './description';
 
 export class KynthCore implements INodeType {
 	// n8n's manual review (2026-08-17, v0.2.3) required this even though
-	// kynthNodeDescription already carries `icon: 'file:kynth.svg'` — the linter rule
+	// kynthNodeDescription already carries an icon field. The linter rule
 	// `@n8n/community-nodes/icon-validation` reads the CLASS, not the description it
 	// points at. The svg it names did not exist in the package at all until now, so the
 	// node also shipped iconless. Both halves are fixed together.
-	icon: Icon = 'file:kynth.svg';
+	//
+	// n8n's manual review (2026-09-21, on v0.3.0) escalated this: a single-file icon on
+	// the node class no longer satisfies icon-validation at all, it must be the themed
+	// { light, dark } form. Same SVG for both until separate variants exist.
+	icon: Icon = { light: 'file:kynth.svg', dark: 'file:kynth.svg' };
 
 	description: INodeTypeDescription = kynthNodeDescription;
 }
