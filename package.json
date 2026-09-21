@@ -1,25 +1,26 @@
 {
-  "name": "n8n-nodes-kynth",
-  "version": "0.2.4",
-  "description": "Kynth Core for n8n — 39 finished-job AI endpoints: documents to JSON, extraction, triage, research, moderation, and more. Task-named pricing, one credit wallet.",
+  "name": "n8n-nodes-compound",
+  "version": "0.3.0",
+  "description": "ParseRail for n8n: 41 finished-job AI operations in one node, documents to schema-valid JSON, extraction, triage, research, moderation, agent memory. One credit wallet, failed calls never burn credits.",
   "keywords": [
     "n8n-community-node-package",
-    "kynth",
+    "compound-labs",
+    "parserail",
     "ai",
     "document-parsing",
     "invoice-ocr",
     "extraction"
   ],
   "license": "MIT",
-  "homepage": "https://api.kynth.studio",
+  "homepage": "https://parserail.thecompound.tech",
   "author": {
-    "name": "Kynth Studios",
-    "email": "hello@kynth.studio",
-    "url": "https://kynth.studio"
+    "name": "Compound Labs",
+    "email": "hello@thecompound.tech",
+    "url": "https://thecompound.tech"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kyisaiah47/n8n-nodes-kynth.git"
+    "url": "git+https://github.com/kyisaiah47/n8n-nodes-compound.git"
   },
   "main": "index.js",
   "files": [
