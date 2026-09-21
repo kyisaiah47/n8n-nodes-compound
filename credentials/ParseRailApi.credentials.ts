@@ -1,4 +1,4 @@
-// Kynth Core API credentials for n8n. One bearer key (ksk_live_...) opens all
+// ParseRail API credentials for n8n. One bearer key (ksk_live_...) opens all
 // 39 endpoints. Mint keys at https://parserail.thecompound.tech, every account
 // gets 500 free credits a month, no card.
 //
@@ -6,6 +6,10 @@
 // parserail.thecompound.tech), but it is a redirect hop through a retired
 // domain, not the live host. api.thecompound.tech answers the same routes
 // directly (measured the same day: 401 with no key, 200 with a real one).
+//
+// Renamed from KynthApi the same day: Kynth is retired across the estate,
+// and the class name, the internal credential name, the display name and
+// the icon file were all still "Kynth" here.
 
 import type {
 	IAuthenticateGeneric,
@@ -15,22 +19,22 @@ import type {
 	INodeProperties,
 } from 'n8n-workflow';
 
-export class KynthApi implements ICredentialType {
-	name = 'kynthApi';
+export class ParseRailApi implements ICredentialType {
+	name = 'parseRailApi';
 
-	displayName = 'Kynth Core API';
+	displayName = 'ParseRail API';
 
 	// n8n's manual review (2026-08-17, v0.2.3) failed on exactly this line being absent:
 	// `@n8n/community-nodes/cred-class-field-icon-missing`. The credential class must
 	// declare its own icon as a TOP-LEVEL CLASS PROPERTY, not only inside a description
-	// object. `file:` resolves beside the compiled class, so credentials/kynth.svg is
+	// object. `file:` resolves beside the compiled class, so credentials/parserail.svg is
 	// copied into dist/credentials by the build. Reproduce with
 	// `npx @n8n/scan-community-package@beta n8n-nodes-compound`.
 	//
 	// n8n's manual review (2026-09-21, on v0.3.0) recommended the themed { light, dark }
 	// form here too, for consistency with the now-required node-class format. Same SVG
 	// for both until separate variants exist.
-	icon: Icon = { light: 'file:kynth.svg', dark: 'file:kynth.svg' };
+	icon: Icon = { light: 'file:parserail.svg', dark: 'file:parserail.svg' };
 
 	documentationUrl = 'https://parserail.thecompound.tech/docs';
 
@@ -42,7 +46,7 @@ export class KynthApi implements ICredentialType {
 			typeOptions: { password: true },
 			default: '',
 			description:
-				'Your Kynth Core key (ksk_live_...). Mint one at parserail.thecompound.tech, 500 free credits every month, no card.',
+				'Your ParseRail key (ksk_live_...). Mint one at parserail.thecompound.tech, 500 free credits every month, no card.',
 		},
 	];
 

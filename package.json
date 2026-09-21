@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-compound",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "ParseRail for n8n: 41 finished-job AI operations in one node, documents to schema-valid JSON, extraction, triage, research, moderation, agent memory. One credit wallet, failed calls never burn credits.",
   "keywords": [
     "n8n-community-node-package",
@@ -29,15 +29,15 @@
   "n8n": {
     "n8nNodesApiVersion": 1,
     "credentials": [
-      "dist/credentials/KynthApi.credentials.js"
+      "dist/credentials/ParseRailApi.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/KynthCore/KynthCore.node.js"
+      "dist/nodes/ParseRail/ParseRail.node.js"
     ]
   },
   "scripts": {
-    "build": "tsc -p tsconfig.json && cp nodes/KynthCore/kynth.svg dist/nodes/KynthCore/ && cp credentials/kynth.svg dist/credentials/ && npm run icons:check",
-    "icons:check": "test -s dist/nodes/KynthCore/kynth.svg && test -s dist/credentials/kynth.svg || (echo '⛔ icon missing from dist — the node would publish iconless again (see the 2026-08-17 n8n manual review)' && exit 1)",
+    "build": "tsc -p tsconfig.json && cp nodes/ParseRail/parserail.svg dist/nodes/ParseRail/ && cp credentials/parserail.svg dist/credentials/ && npm run icons:check",
+    "icons:check": "test -s dist/nodes/ParseRail/parserail.svg && test -s dist/credentials/parserail.svg || (echo 'icon missing from dist, the node would publish iconless again (see the 2026-08-17 n8n manual review)' && exit 1)",
     "lint:n8n": "npx --yes @n8n/node-cli@latest lint",
     "prepublishOnly": "npm run build"
   },
