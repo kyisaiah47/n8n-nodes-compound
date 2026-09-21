@@ -1,6 +1,11 @@
-// Kynth Core API credentials for n8n — one bearer key (ksk_live_…) opens all
-// 39 endpoints. Mint keys at https://api.kynth.studio/dashboard; every account
+// Kynth Core API credentials for n8n. One bearer key (ksk_live_...) opens all
+// 39 endpoints. Mint keys at https://parserail.thecompound.tech, every account
 // gets 500 free credits a month, no card.
+//
+// api.kynth.studio still answers (measured 2026-09-21: 308 to
+// parserail.thecompound.tech), but it is a redirect hop through a retired
+// domain, not the live host. api.thecompound.tech answers the same routes
+// directly (measured the same day: 401 with no key, 200 with a real one).
 
 import type {
 	IAuthenticateGeneric,
@@ -27,7 +32,7 @@ export class KynthApi implements ICredentialType {
 	// for both until separate variants exist.
 	icon: Icon = { light: 'file:kynth.svg', dark: 'file:kynth.svg' };
 
-	documentationUrl = 'https://api.kynth.studio/docs';
+	documentationUrl = 'https://parserail.thecompound.tech/docs';
 
 	properties: INodeProperties[] = [
 		{
@@ -37,7 +42,7 @@ export class KynthApi implements ICredentialType {
 			typeOptions: { password: true },
 			default: '',
 			description:
-				'Your Kynth Core key (ksk_live_…). Mint one at api.kynth.studio/dashboard — 500 free credits every month, no card.',
+				'Your Kynth Core key (ksk_live_...). Mint one at parserail.thecompound.tech, 500 free credits every month, no card.',
 		},
 	];
 
@@ -52,7 +57,7 @@ export class KynthApi implements ICredentialType {
 
 	test: ICredentialTestRequest = {
 		request: {
-			baseURL: 'https://api.kynth.studio',
+			baseURL: 'https://api.thecompound.tech',
 			url: '/v1/account',
 		},
 	};

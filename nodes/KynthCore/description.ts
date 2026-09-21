@@ -27,7 +27,7 @@ export const kynthNodeDescription = {
 		}
 	],
 	"requestDefaults": {
-		"baseURL": "https://api.kynth.studio",
+		"baseURL": "https://api.thecompound.tech",
 		"headers": {
 			"Content-Type": "application/json"
 		}
