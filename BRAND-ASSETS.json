@@ -1,0 +1,7 @@
+{
+ "product": "ParseRail for n8n",
+ "parent": "ParseRail",
+ "domain": "https://parserail.thecompound.tech",
+ "tagline": "ParseRail for n8n: 41 finished-job AI operations in one node.",
+ "description": "Documents to schema-valid JSON, extraction, triage, research, moderation, agent memory. One credit wallet, failed calls never burn credits."
+}
