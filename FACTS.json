@@ -1,0 +1,28 @@
+{
+  "claims": [
+    {
+      "id": "parserail-prepaid-credit-entry-price",
+      "claim": "ParseRail prepaid credit entry pricing",
+      "value": "$20 one-time pack or $19/month plan; no free tier",
+      "kind": "price",
+      "sourceUrl": "https://parserail.thecompound.tech/docs/credits",
+      "sourceTitle": "ParseRail — Credits & pricing",
+      "asOf": "2026-09-30",
+      "appearsOn": ["README.md"],
+      "lastVerified": "2026-09-30",
+      "status": "verified"
+    },
+    {
+      "id": "parserail-success-only-billing",
+      "claim": "ParseRail calls are charged only when they succeed",
+      "value": "A failed call costs nothing",
+      "kind": "billing-policy",
+      "sourceUrl": "https://parserail.thecompound.tech/docs/credits",
+      "sourceTitle": "ParseRail — Credits & pricing",
+      "asOf": "2026-09-30",
+      "appearsOn": ["README.md", "credentials/ParseRailApi.credentials.ts"],
+      "lastVerified": "2026-09-30",
+      "status": "verified"
+    }
+  ]
+}

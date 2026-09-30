@@ -46,7 +46,7 @@ export class ParseRailApi implements ICredentialType {
 			typeOptions: { password: true },
 			default: '',
 			description:
-				'Your ParseRail key (ksk_live_...). Mint one at parserail.thecompound.tech, 500 free credits every month, no card.',
+				'Your ParseRail key (ksk_live_...). Mint one at parserail.thecompound.tech after choosing a credit pack or plan.',
 		},
 	];
 

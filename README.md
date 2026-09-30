@@ -31,7 +31,7 @@ The full, current operation list is generated from the live API catalog. See [pa
 
 ## Credentials
 
-1. Create an account at [parserail.thecompound.tech](https://parserail.thecompound.tech). Every account includes 500 free credits per month, no card required.
+1. Create an account at [parserail.thecompound.tech](https://parserail.thecompound.tech). ParseRail uses prepaid credits: packs start at $20 or plans at $19/month; there is no free tier.
 2. Mint an API key (`ksk_live_...`).
 3. In n8n, create a **ParseRail API** credential and paste the key.
 
