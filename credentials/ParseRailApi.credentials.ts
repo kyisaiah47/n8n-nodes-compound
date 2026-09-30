@@ -2,14 +2,14 @@
 // 39 endpoints. Mint keys at https://parserail.thecompound.tech, every account
 // gets 500 free credits a month, no card.
 //
-// api.kynth.studio still answers (measured 2026-09-21: 308 to
+// The retired studio API host still answers (measured 2026-09-21: 308 to
 // parserail.thecompound.tech), but it is a redirect hop through a retired
 // domain, not the live host. api.thecompound.tech answers the same routes
 // directly (measured the same day: 401 with no key, 200 with a real one).
 //
-// Renamed from KynthApi the same day: Kynth is retired across the estate,
+// Renamed the same day: the studio's old name is retired across the estate,
 // and the class name, the internal credential name, the display name and
-// the icon file were all still "Kynth" here.
+// the icon file all still carried it here.
 
 import type {
 	IAuthenticateGeneric,

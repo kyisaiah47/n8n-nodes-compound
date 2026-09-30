@@ -3,8 +3,8 @@
 // GENERATED from the API's own endpoint catalog (apps/parserail scripts/
 // generate-clients.ts), so the node can never drift from the live API.
 //
-// Renamed from KynthCore on 2026-09-21: Kynth is retired across the estate,
-// and this node still declaring "Kynth" anywhere (the class, the internal
+// Renamed on 2026-09-21: the studio's old name is retired across the estate,
+// and this node still declaring it anywhere (the class, the internal
 // name, the icon file, the credential it required) was the studio's own
 // dead brand shipping in a public submission. Every identifier below is
 // ParseRail now, not just the package name.
