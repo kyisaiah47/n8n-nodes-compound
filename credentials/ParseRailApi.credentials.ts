@@ -1,6 +1,6 @@
 // ParseRail API credentials for n8n. One bearer key (ksk_live_...) opens all
-// 39 endpoints. Mint keys at https://parserail.thecompound.tech, every account
-// gets 500 free credits a month, no card.
+// 39 endpoints. Mint keys at https://parserail.thecompound.tech. There is no free
+// tier: credits are bought up front, a $20 pack or a plan from $19/mo.
 //
 // The retired studio API host still answers (measured 2026-09-21: 308 to
 // parserail.thecompound.tech), but it is a redirect hop through a retired
