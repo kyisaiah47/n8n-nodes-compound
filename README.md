@@ -14,7 +14,7 @@ Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes
 n8n-nodes-parserail
 ```
 
-Installed `n8n-nodes-compound` before the 0.4.0 rename? That package is deprecated. Uninstall it and install `n8n-nodes-parserail` in its place. The node and the credential keep their names, so existing workflows keep working after the swap.
+If you installed `n8n-nodes-compound` before the 0.4.0 rename, uninstall that deprecated package. Install `n8n-nodes-parserail` in its place. The node and credential keep their names, so existing workflows keep working after the swap.
 
 ## Operations
 
