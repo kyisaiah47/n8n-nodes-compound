@@ -29,7 +29,7 @@ export class ParseRailApi implements ICredentialType {
 	// declare its own icon as a TOP-LEVEL CLASS PROPERTY, not only inside a description
 	// object. `file:` resolves beside the compiled class, so credentials/parserail.svg is
 	// copied into dist/credentials by the build. Reproduce with
-	// `npx @n8n/scan-community-package@beta n8n-nodes-compound`.
+	// `npx @n8n/scan-community-package@beta n8n-nodes-parserail`.
 	//
 	// n8n's manual review (2026-09-21, on v0.3.0) recommended the themed { light, dark }
 	// form here too, for consistency with the now-required node-class format. Same SVG

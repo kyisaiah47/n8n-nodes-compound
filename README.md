@@ -1,4 +1,4 @@
-# n8n-nodes-compound
+# n8n-nodes-parserail
 
 This is an n8n community node for [ParseRail](https://parserail.thecompound.tech), one AI engine exposing 39 finished-job endpoints: documents to schema-valid JSON, field extraction, triage, research, moderation, and agent memory. Every call is a task with a task-named price, drawn from one credit wallet. Failed calls never burn credits.
 
@@ -11,10 +11,10 @@ This is an n8n community node for [ParseRail](https://parserail.thecompound.tech
 Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes/installation/) in the n8n community nodes documentation. The package name is:
 
 ```
-n8n-nodes-compound
+n8n-nodes-parserail
 ```
 
-Installed before the 0.3.0 rename? The old package, published under the retired studio name, is deprecated; uninstall it and install `n8n-nodes-compound` in its place.
+Installed `n8n-nodes-compound` before the 0.4.0 rename? That package is deprecated. Uninstall it and install `n8n-nodes-parserail` in its place. The node and the credential keep their names, so existing workflows keep working after the swap.
 
 ## Operations
 
@@ -59,6 +59,7 @@ Failed calls return an error object and are not billed, so retry loops are safe.
 
 ## Version history
 
+- **0.4.0**: renamed the package to `n8n-nodes-parserail` and the repository to `kyisaiah47/n8n-nodes-parserail`. `n8n-nodes-compound` is deprecated with a pointer to this package. No functional changes.
 - **0.3.4**: renamed every internal identifier off the retired studio name. The node class, the credential class, the internal node and credential names, the display names, the file names, and the icon files all still carried the retired name after the 0.3.0 package rename. The node is `ParseRail`, the credential is `ParseRail API`, and the icon is the real ParseRail mark from the brand registry, not a placeholder.
 - **0.3.3**: moved every live API reference off the retired studio API domain onto `api.thecompound.tech` and `parserail.thecompound.tech`, and rewrote the README, which still titled and instructed installing the deprecated old-name package.
 - **0.3.2**: fixed the real cause of n8n's automated-review rejection (the node class's `description` was a bare identifier, not an inline object literal, which n8n's icon-validation rule treats as having no icon at all regardless of what the identifier holds), added the `usableAsTool` field, and moved every live API reference off the retired studio API domain onto `api.thecompound.tech` and `parserail.thecompound.tech`.
