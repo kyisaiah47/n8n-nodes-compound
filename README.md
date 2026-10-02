@@ -39,17 +39,17 @@ The credential authenticates as a bearer token and is verified against `/v1/acco
 
 ## Compatibility
 
-Requires n8n version 1.0 or later (`n8nNodesApiVersion` 1). Tested against recent n8n releases; the node has no runtime dependencies beyond `n8n-workflow`.
+The node requires n8n version 1.0 or later (`n8nNodesApiVersion` 1). Recent n8n releases have been tested. The node has no runtime dependencies beyond `n8n-workflow`.
 
 ## Usage
 
 A minimal flow: **Webhook to ParseRail (Document parse) to IF to your system.**
 
 1. Feed the node a PDF/image URL or raw text, depending on the operation.
-2. Pick the operation and, where the operation takes a schema or field list, define the fields you want back.
+2. Pick the operation. If the operation takes a schema or field list, define the fields you want back.
 3. Downstream nodes receive schema-valid JSON, no free-text parsing.
 
-Failed calls return an error object and are not billed, so retry loops are safe.
+Failed calls return an error object. Failed calls are not billed, so retry loops are safe.
 
 ## Resources
 
@@ -60,9 +60,9 @@ Failed calls return an error object and are not billed, so retry loops are safe.
 ## Version history
 
 - **0.4.0**: renamed the package to `n8n-nodes-parserail` and the repository to `kyisaiah47/n8n-nodes-parserail`. `n8n-nodes-compound` is deprecated with a pointer to this package. No functional changes.
-- **0.3.4**: renamed every internal identifier off the retired studio name. The node class, the credential class, the internal node and credential names, the display names, the file names, and the icon files all still carried the retired name after the 0.3.0 package rename. The node is `ParseRail`, the credential is `ParseRail API`, and the icon is the real ParseRail mark from the brand registry, not a placeholder.
-- **0.3.3**: moved every live API reference off the retired studio API domain onto `api.thecompound.tech` and `parserail.thecompound.tech`, and rewrote the README, which still titled and instructed installing the deprecated old-name package.
-- **0.3.2**: fixed the real cause of n8n's automated-review rejection (the node class's `description` was a bare identifier, not an inline object literal, which n8n's icon-validation rule treats as having no icon at all regardless of what the identifier holds), added the `usableAsTool` field, and moved every live API reference off the retired studio API domain onto `api.thecompound.tech` and `parserail.thecompound.tech`.
+- Version **0.3.4** renamed every internal identifier from the retired studio name. After the 0.3.0 package rename, the node class, credential class, internal node and credential names, display names, file names, and icon files still used the retired name. The node is `ParseRail`. The credential is `ParseRail API`. The icon is the real ParseRail mark from the brand registry, not a placeholder.
+- Version **0.3.3** moved every live API reference from the retired studio API domain to `api.thecompound.tech` and `parserail.thecompound.tech`. Version 0.3.3 also rewrote the README. The README still titled and instructed readers to install the deprecated old-name package.
+- Version **0.3.2** fixed the cause of n8n's automated-review rejection. The node class's `description` was a bare identifier, not an inline object literal. n8n's icon-validation rule treated the node as having no icon regardless of what the identifier held. Version 0.3.2 added the `usableAsTool` field. It also moved every live API reference from the retired studio API domain to `api.thecompound.tech` and `parserail.thecompound.tech`.
 - **0.3.1**: themed `{ light, dark }` icon on the node and credential classes.
 - **0.3.0**: renamed the package to `n8n-nodes-compound` and the publisher identity to Compound Labs.
 - **0.2.4**: the icon the node has always declared and never shipped.
